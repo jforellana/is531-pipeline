@@ -1,4 +1,4 @@
-require('dotenv').config();
+require("dotenv").config();
 
 const express = require("express");
 
@@ -16,13 +16,11 @@ app.use(express.static(path.join(__dirname, "public")));
 const knex = require("knex")({
   client: "mysql",
   connection: {
-    host:
-      process.env.RDS_HOSTNAME ||
-      "donuts-db-juan.c5aiso2wg4pg.us-east-2.rds.amazonaws.com",
-    user: process.env.RDS_USERNAME || "admin",
-    password: process.env.RDS_PASSWORD || "password1",
-    database: process.env.RDS_DB_NAME || "donuts",
-    port: process.env.RDS_PORT || 3306,
+    host: "donuts-db-juan.c5aiso2wg4pg.us-east-2.rds.amazonaws.com",
+    user: "admin",
+    password: "password1",
+    database: "donuts",
+    port: 3306,
   },
 });
 
